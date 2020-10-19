@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Button.css';
+
 const Button = ({ selected, onClick, value, children }) => {
     const handleButtonClick = () => {
         const newValue = selected ? null : value;

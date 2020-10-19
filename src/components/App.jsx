@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import queryString from 'query-string';
@@ -8,6 +8,8 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import ProgramList from './ProgramList/ProgramList';
 import history from '../history';
+
+import './App.css';
 
 const App = () => {
     const [programs, setPrograms] = useState([]);
@@ -61,17 +63,24 @@ const App = () => {
         })();
     }, [queryParamString]);
 
+    console.log(programs);
     return (
-        <Fragment>
+        <div className="container">
             <Router history={history}>
                 <Header />
-                <Filter queryParamsUpdate={generateQueryString} />
-                <Route path={queryParamString}>
-                    <ProgramList programs={programs} />
-                </Route>
+                <div className="content">
+                    <div className="content-wrap">
+                        <div className="content-filter">
+                            <Filter queryParamsUpdate={generateQueryString} />
+                        </div>
+                        <Route path="/">
+                            <ProgramList programs={programs} />
+                        </Route>
+                    </div>
+                </div>
                 <Footer />
             </Router>
-        </Fragment>
+        </div>
     );
 };
 

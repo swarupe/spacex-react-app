@@ -1,13 +1,14 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from 'react';
+import './Header.css';
 
 class Header extends Component {
-  render() {
-    return (
-      <Fragment>
-        <h3>SpaceX Launch Program</h3>
-      </Fragment>
-    );
-  }
+    render() {
+        return (
+            <div className="title">
+                <h2>SpaceX Launch Program</h2>
+            </div>
+        );
+    }
 }
 
 export default Header;

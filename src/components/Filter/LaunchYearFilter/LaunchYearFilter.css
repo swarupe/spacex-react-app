@@ -1,0 +1,23 @@
+.launch-year-header {
+    text-align: center;
+    border-bottom: 1.5px solid #d1cecf;
+    margin: 4px 16px;
+    margin-top: 0;
+}
+
+.launch-year-buttons-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launch-year-button {
+    width: 50%;
+    margin: 4px 0;
+}
+
+.launch-year-button:nth-child(odd) {
+    padding-right: 16px;
+}
+.launch-year-button:nth-child(even) {
+    padding-left: 16px;
+}

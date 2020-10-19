@@ -1,0 +1,23 @@
+.success-launch-header {
+    text-align: center;
+    border-bottom: 1.5px solid #d1cecf;
+    margin: 4px 16px;
+    margin-top: 0;
+}
+
+.success-launch-buttons-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.success-launch-button-left {
+    width: 50%;
+    margin: 4px 0;
+    padding-right: 16px;
+}
+
+.success-launch-button-right {
+    width: 50%;
+    margin: 4px 0;
+    padding-left: 16px;
+}

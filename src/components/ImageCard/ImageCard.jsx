@@ -1,16 +1,50 @@
-import React, { Fragment } from "react";
+import React from 'react';
+
+import './ImageCard.css';
 
 const ImageCard = ({ imageDetails }) => {
-  return (
-    <Fragment>
-      <img src={imageDetails.imageUrl} alt="Not loaded" />
-      <div>{imageDetails.missionName + "#" + imageDetails.flightNumber}</div>
-      <div>Mission Ids: {imageDetails.missionId}</div>
-      <div>Launch Year: {imageDetails.launchYear}</div>
-      <div>Successful Launch: {imageDetails.launchSuccess}</div>
-      <div>Successful Landing: {imageDetails.successfulLanding}</div>
-    </Fragment>
-  );
+    return (
+        <div className="card">
+            <div className="card-image">
+                <img src={imageDetails.imageUrl} alt="Not loaded" />
+            </div>
+            <div className="card-name">
+                {imageDetails.missionName + '#' + imageDetails.flightNumber}
+            </div>
+            {imageDetails.missionId && imageDetails.missionId.length > 0 && (
+                <div className="card-data-item">
+                    <span className="card-data-item-label">Mission Ids:</span>
+                    <span className="card-data-item-value">
+                        <ul>
+                            {imageDetails.missionId.map((missionId) => (
+                                <li key={missionId}>{missionId}</li>
+                            ))}
+                        </ul>
+                    </span>
+                </div>
+            )}
+            <div className="card-data-item">
+                <span className="card-data-item-label">Launch Year:</span>
+                <span className="card-data-item-value">
+                    {imageDetails.launchYear}
+                </span>
+            </div>
+            <div className="card-data-item">
+                <span className="card-data-item-label">Successful Launch:</span>
+                <span className="card-data-item-value">
+                    {imageDetails.launchSuccess ? 'true' : 'false'}
+                </span>
+            </div>
+            <div className="card-data-item">
+                <span className="card-data-item-label">
+                    Successful Landing:
+                </span>
+                <span className="card-data-item-value">
+                    {imageDetails.successfulLanding ? 'true' : 'false'}
+                </span>
+            </div>
+        </div>
+    );
 };
 
 export default ImageCard;

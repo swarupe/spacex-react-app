@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Button from '../../shared/Button/Button';
 
+import './LaunchYearFilter.css';
+
 const generateLaunchYearButtons = (selectedYear, updateState) => {
     let launchYearList = [
         2006,
@@ -20,10 +22,10 @@ const generateLaunchYearButtons = (selectedYear, updateState) => {
     ];
 
     return (
-        <div>
+        <div className="launch-year-buttons-list">
             {launchYearList.map((launchYear, index) => {
                 return (
-                    <div key={index}>
+                    <div key={index} className="launch-year-button">
                         <Button
                             selected={launchYear === selectedYear}
                             onClick={updateState}
@@ -47,7 +49,7 @@ const LaunchYearFilter = ({ queryParamsUpdate }) => {
 
     return (
         <Fragment>
-            <p>Launch Year</p>
+            <p className="launch-year-header">Launch Year</p>
             {generateLaunchYearButtons(launchYear, setLaunchYear)}
         </Fragment>
     );

@@ -1,0 +1,11 @@
+.filter {
+    background: white;
+    height: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.filter-list {
+    padding: 8px;
+}

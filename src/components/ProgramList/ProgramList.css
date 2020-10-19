@@ -1,0 +1,27 @@
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.program-card {
+    padding: 8px;
+    width: 100%;
+    display: inline-block;
+}
+
+@media (min-width: 700px) {
+    .card-grid {
+        flex: 1;
+        overflow-y: scroll;
+    }
+    .program-card {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .program-card {
+        width: 25%;
+    }
+}

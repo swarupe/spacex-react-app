@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import ImageCard from '../ImageCard/ImageCard';
+import './ProgramList.css';
 
 const ProgramList = ({ programs }) => {
     const renderPrograms = (programsList) => {
         if (programsList && programsList.length > 0) {
             return (
-                <Fragment>
+                <div className="card-grid">
                     {programsList.map((program) => {
                         const imageDetails = {
                             imageUrl: program.links.mission_patch_small,
@@ -19,20 +20,22 @@ const ProgramList = ({ programs }) => {
                             missionId: program.mission_id,
                         };
                         return (
-                            <ImageCard
+                            <div
+                                className="program-card"
                                 key={program.flight_number}
-                                imageDetails={imageDetails}
-                            />
+                            >
+                                <ImageCard imageDetails={imageDetails} />
+                            </div>
                         );
                     })}
-                </Fragment>
+                </div>
             );
         } else {
             return <div>Loading...</div>;
         }
     };
 
-    return <div>{renderPrograms(programs)}</div>;
+    return <Fragment>{renderPrograms(programs)}</Fragment>;
 };
 
 export default ProgramList;
